@@ -82,39 +82,66 @@ favPlaceBorder = true;
 //------------------------
 // sixth question to user
 //------------------------
-var response6 = parseInt(prompt('Let\'s play a game. I am thinking of an integer between'
-                              + '1 and 10. You have exactly four guesses to get the correct'
-                              + 'answer. Let\'s go!'));
 var answer6 = 1 + Math.floor(Math.random() * 10); // random number between 1 and 10
 console.log('This is my random number between 1 and 10: ' + answer6);
-var numTries = 1;   // first prompt is the first try, so initialize numTries to 1
-
-while(numTries < 5) {
+var numTries = 0;
+var doneGame = false;
+alert('Let\'s play a game. I am thinking of an integer between'
+                              + '1 and 10. You have exactly four guesses to get the correct'
+                              + 'answer. Let\'s go!');
+while(numTries < 4) {
+  var response6 = parseInt(prompt('Type in your number'));
+  numTries++;
   if (response6 === answer6) {
     alert('You guessed right. That\'s awesome! Thank you for playing my game');
-    numTries = 5; // break out of the while loop
+    doneGame = true;
+    break; // break out of the while loop
   } else {
     if (response6 > answer6) {
-      alert('Sorry, guess a lower number');
+      alert('Sorry, guess a lower number. You have ' + (4 - numTries) + ' tries left.');
     }
     else {
-      alert('Sorry, guess a higher number');
+      alert('Sorry, guess a higher number. You have ' + (4 - numTries) + ' tries left.');
     }
-    response6 = parseInt(prompt('Take another shot at it!'));
-    if (response6 === answer6) {
-      alert('You guessed right. That\'s awesome! Thank you for playing my game');
-      numTries = 5; // break out of the while loop
-    } else {
-      numTries++;
-    }
-  }
-  if (numTries === 4) {
-    alert('Sorry, you exceeded the number of tries. Exiting game!');
-    numTries++;
   }
 }
 
-// //------------------------
+if ((numTries === 4) && (!doneGame)) {
+  alert('Sorry, you exceeded the number of tries. Exiting game!');
+  numTries++;
+}
+
+//------------------------
+//seventh question to user
+//------------------------
+var answer7 = ['California', 'Michigan', 'Connecticut', 'Texas', 'Georgia'];
+var numStateGuesses = 0;
+var done = false;
+
+while(numStateGuesses < 6) {
+  var response7 = prompt('Can you guess a state I have lived in besides Washington?');
+  numStateGuesses++;
+  console.log(numStateGuesses + 'Num guesses');
+  for (var i = 0; i < answer7.length; i++) {
+    console.log(response7, answer7[i]);
+    if (response7 === answer7[i]){
+      alert('That\'s awesome! You got it right! Here are all the states I '
+           + 'lived in - ' + answer7);
+      done = true;
+      break;  // break out of the for loop
+    }
+  }
+  if (done) {
+    break; // break out of the while loop
+  } else {
+    alert('Sorry, guess again, you have ' + (6 - numStateGuesses) + ' tries left.');
+  }
+}
+if ((numStateGuesses === 6) && (!done)) {
+  alert('Sorry, you exceeded the number of tries. Exiting game!');
+  alert('By the way, here are the other states I lived in - ' + answer7);
+}
+// // //------------------------
 // // draw borders around all images that showed up
 // //------------------------
 // if (petBorder) {
