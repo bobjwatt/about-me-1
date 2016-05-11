@@ -3,6 +3,8 @@ h1 {
   width:80%;
   color:green;
   font-family:sans-serif;
+  padding-bottom: 20px;
+  border-bottom: 2px solid gray;
 }
 
 hr {

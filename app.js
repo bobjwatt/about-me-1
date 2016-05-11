@@ -4,7 +4,6 @@
 var userName = prompt('Hi, Thanks for visiting my site!, what is your name');
 alert('Nice to meet you,' + userName + '. I\'m going you ask you some questions about me.');
 console.log(userName);
-
 //------------------------
 // First question to user
 //------------------------
@@ -15,12 +14,11 @@ var petBorder = false;
 
 if (response1 === answer1 || response1 === answer1[0]) {
   alert('You are correct, ' + userName);
-  petImage.src = 'imgs/Sayla.jpg';
-  petBorder = true;
 } else {
   alert('You are not correct, ' + userName + '. I do have a dog');
 }
-
+petImage.src = 'imgs/Sayla.jpg';
+petBorder = true;
 //------------------------
 // Second question to user
 //------------------------
@@ -31,12 +29,11 @@ var homeTownBorder = false;
 
 if (response2.toLowerCase() === answer2) {
   alert('Yes beautiful Seattle, that\'s my hometown, ' + userName + '.');
-  homeTownImage.src = 'imgs/seattle.jpg';
-  homeTownBorder = true;
 } else {
   alert('No, sorry that is not correct. I am from Seattle in Washington.');
 }
-
+homeTownImage.src = 'imgs/seattle.jpg';
+homeTownBorder = true;
 //------------------------
 // Third question to user
 //------------------------
@@ -47,12 +44,11 @@ var foodBorder = false;
 
 if (response3 === answer3) {
   alert('Yay! that\'s correct, ' + userName + '. I love pizza.');
-  foodImage.src = 'imgs/pizza.png';
-  foodBorder = true;
 } else {
   alert('No, sorry that is not correct. I love eating pizza.');
 }
-
+foodImage.src = 'imgs/pizza.png';
+foodBorder = true;
 //------------------------
 // Fourth question to user
 //------------------------
@@ -63,12 +59,11 @@ var movieBorder = false;
 
 if (response4 === answer4) {
   alert('That movie gives me the creeps. Good guess, ' + userName + '.');
-  movieImage.src = 'imgs/movie.jpg';
-  movieBorder = true;
 } else {
   alert('Actually, the movie that scared me the most recently was Poltergeist.');
 }
-
+movieImage.src = 'imgs/movie.jpg';
+movieBorder = true;
 //------------------------
 // Fifth question to user
 //------------------------
@@ -79,29 +74,63 @@ var favPlaceBorder = false;
 
 if (response5 === answer5) {
   alert('Yes, nothing like a staycation, ' + userName + '.');
-  favPlaceImage.src = 'imgs/home.jpg';
-  favPlaceBorder = true;
 } else {
   alert('No, I usually like to laze around at home.');
 }
+favPlaceImage.src = 'imgs/home.jpg';
+favPlaceBorder = true;
 //------------------------
-// draw borders around all images that showed up
+// sixth question to user
 //------------------------
-if (petBorder) {
-  petImage.style.border = '3px solid blue';
+var response6 = parseInt(prompt('Let\'s play a game. I am thinking of an integer between'
+                              + '1 and 10. You have exactly four guesses to get the correct'
+                              + 'answer. Let\'s go!'));
+var answer6 = 1 + Math.floor(Math.random() * 10); // random number between 1 and 10
+console.log('This is my random number between 1 and 10: ' + answer6);
+var numTries = 1;   // first prompt is the first try, so initialize numTries to 1
+
+while(numTries < 5) {
+  if (response6 === answer6) {
+    alert('You guessed right. That\'s awesome! Thank you for playing my game');
+    numTries = 5; // break out of the while loop
+  } else {
+    if (response6 > answer6) {
+      alert('Sorry, guess a lower number');
+    }
+    else {
+      alert('Sorry, guess a higher number');
+    }
+    response6 = parseInt(prompt('Take another shot at it!'));
+    if (response6 === answer6) {
+      alert('You guessed right. That\'s awesome! Thank you for playing my game');
+      numTries = 5; // break out of the while loop
+    } else {
+      numTries++;
+    }
+  }
+  if (numTries === 4) {
+    alert('Sorry, you exceeded the number of tries. Exiting game!');
+    numTries++;
+  }
 }
 
-if (homeTownBorder) {
-  homeTownImage.style.border = '3px solid blue';
-}
-
-if (foodBorder) {
-  foodImage.style.border = '3px solid blue';
-}
-
-if (movieBorder) {
-  movieImage.style.border = '3px solid blue';
-}
-if (favPlaceBorder) {
-  favPlaceImage.style.border = '3px solid blue';
-}
+// //------------------------
+// // draw borders around all images that showed up
+// //------------------------
+// if (petBorder) {
+//   petImage.style.border = '3px solid blue';
+// }
+// if (homeTownBorder) {
+//   homeTownImage.style.border = '3px solid blue';
+// }
+//
+// if (foodBorder) {
+//   foodImage.style.border = '3px solid blue';
+// }
+//
+// if (movieBorder) {
+//   movieImage.style.border = '3px solid blue';
+// }
+// if (favPlaceBorder) {
+//   favPlaceImage.style.border = '3px solid blue';
+// }
