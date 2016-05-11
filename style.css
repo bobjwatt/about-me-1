@@ -1,5 +1,17 @@
 h1 {
+  text-align: left;;
+  width:80%;
+  color:green;
+  font-family:sans-serif;
+}
+
+hr {
+  background-color: blue;
+}
+
+h2 {
   color:blue;
+  font-family:sans-serif;
 }
 
 .container {
