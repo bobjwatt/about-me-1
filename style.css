@@ -1,3 +1,19 @@
+* {
+  /*border:1px solid black; */
+  font-family:sans-serif;
+}
+
+body {
+  margin:10px 10px 10px 10px;
+  padding:0;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.mainheading {
+  background-color: gray;
+}
+
 h1 {
   text-align: left;;
   width:80%;
@@ -7,16 +23,71 @@ h1 {
   border-bottom: 2px solid gray;
 }
 
-hr {
-  background-color: blue;
+h2 {
+  color:blue;
+  text-align: left:center;
+  padding-left:10px;
 }
 
+.content {
+  width:70%;
+  height:300px;
+  /*height:200px; */
+  /*display: block;*/
+  display:flex;
+}
+
+img {
+    display: block;
+}
+
+ul {
+  width:50%;
+  position:absolute;
+}
+
+#pet #hometown #food #favplace #movie{
+  display: inline;
+  width: 50%;
+  height:inherit;
+}
+
+.listdetail {
+  display: inline;
+  width: 50%;
+}
+
+#list1 {
+  color:white;
+}
+
+#list2 {
+  color:white;
+}
+
+#list3 {
+  color:white;
+}
+
+#list4 {
+  color:white;
+}
+
+#list5 {
+  color:white;
+}
+
+
+
+
+
+/*
 h2 {
   color:blue;
   font-family:sans-serif;
 }
 
-.container {
+.pictures {
     width:50%;
     height:200px;
     display: inline-block;
@@ -24,4 +95,5 @@ h2 {
 
 img {
   width:100%;
-}
+  display: block;
+} */
