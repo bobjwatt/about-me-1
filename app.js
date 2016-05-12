@@ -2,7 +2,7 @@
 // Turn off prompts if testing
 // HTML and CSS
 //------------------------
-var turnOffPrompts = false;
+var turnOffPrompts = true;
 
 if (!turnOffPrompts) {
   //------------------------
@@ -23,8 +23,6 @@ if (!turnOffPrompts) {
   //------------------------
   var response1 = prompt('Do I have a dog?').toLowerCase();
   var answer1 = 'yes';
-  var petImage = document.getElementById('pet');
-  var petBorder = false;
 
   if (response1 === answer1 || response1 === answer1[0]) {
     alert('You are correct, ' + userName);
@@ -32,15 +30,12 @@ if (!turnOffPrompts) {
   } else {
     alert('You are not correct, ' + userName + '. I do have a dog');
   }
-  petImage.src = 'imgs/Sayla.jpg';
-  petBorder = true;
+
   //------------------------
   // Second question to user
   //------------------------
   var response2 = prompt('Where do I live? Hint: its a popular city in the Northwest.');
   var answer2 = 'seattle';
-  var homeTownImage = document.getElementById('hometown');
-  var homeTownBorder = false;
 
   if (response2.toLowerCase() === answer2) {
     alert('Yes beautiful Seattle, that\'s my hometown, ' + userName + '.');
@@ -48,15 +43,12 @@ if (!turnOffPrompts) {
   } else {
     alert('No, sorry that is not correct. I am from Seattle in Washington.');
   }
-  homeTownImage.src = 'imgs/seattle.jpg';
-  homeTownBorder = true;
+
   //------------------------
   // Third question to user
   //------------------------
   var response3 = prompt('What\'s my favorite food? Hint: think cheese and pepperoni.').toLowerCase();
   var answer3 = 'pizza';
-  var foodImage = document.getElementById('food');
-  var foodBorder = false;
 
   if (response3 === answer3) {
     alert('Yay! that\'s correct, ' + userName + '. I love pizza.');
@@ -64,15 +56,12 @@ if (!turnOffPrompts) {
   } else {
     alert('No, sorry that is not correct. I love eating pizza.');
   }
-  foodImage.src = 'imgs/pizza.png';
-  foodBorder = true;
+
   //------------------------
   // Fourth question to user
   //------------------------
   var response4 = prompt('What\'s the scariest movie I watched? Hint: ghost that creates physical havoc.').toLowerCase();
   var answer4 = 'poltergeist';
-  var movieImage = document.getElementById('movie');
-  var movieBorder = false;
 
   if (response4 === answer4) {
     alert('That movie gives me the creeps. Good guess, ' + userName + '.');
@@ -80,15 +69,12 @@ if (!turnOffPrompts) {
   } else {
     alert('Actually, the movie that scared me the most recently was Poltergeist.');
   }
-  movieImage.src = 'imgs/movie.jpg';
-  movieBorder = true;
+
   //------------------------
   // Fifth question to user
   //------------------------
   var response5 = prompt('What\'s my favorite place to be Hint: its where the heart is.').toLowerCase();
   var answer5 = 'home';
-  var favPlaceImage = document.getElementById('favplace');
-  var favPlaceBorder = false;
 
   if (response5 === answer5) {
     alert('Yes, nothing like a staycation, ' + userName + '.');
@@ -96,8 +82,7 @@ if (!turnOffPrompts) {
   } else {
     alert('No, I usually like to laze around at home.');
   }
-  favPlaceImage.src = 'imgs/home.jpg';
-  favPlaceBorder = true;
+
   //------------------------
   // sixth question to user
   //------------------------
@@ -165,24 +150,49 @@ if (!turnOffPrompts) {
 
   alert(userName + ', you got ' + finalTally + ' questions right ' + ' out of ' + totalQuestions + '.');
 
-  // Show all the list items
-
-  var list1 = document.getElementById('list1');
-  list1.style.color = 'black';
-
-  var list2 = document.getElementById('list2');
-  list2.style.color = 'black';
-
-  var list3 = document.getElementById('list3');
-  list3.style.color = 'black';
-
-  var list4 = document.getElementById('list4');
-  list4.style.color = 'black';
-
-  var list5 = document.getElementById('list5');
-  list5.style.color = 'black';
-
+  //------------------------
+  // Show all the images and text
+  //------------------------
 }
+var petImage = document.getElementById('pet');
+var petBorder = false;
+petImage.src = 'imgs/Sayla.jpg';
+petBorder = true;
+
+var homeTownImage = document.getElementById('hometown');
+var homeTownBorder = false;
+homeTownImage.src = 'imgs/seattle.jpg';
+homeTownBorder = true;
+
+var foodImage = document.getElementById('food');
+var foodBorder = false;
+foodImage.src = 'imgs/pizza.png';
+foodBorder = true;
+
+var movieImage = document.getElementById('movie');
+var movieBorder = false;
+movieImage.src = 'imgs/movie.jpg';
+movieBorder = true;
+
+var favPlaceImage = document.getElementById('favplace');
+var favPlaceBorder = false;
+favPlaceImage.src = 'imgs/home.jpg';
+favPlaceBorder = true;
+
+var list1 = document.getElementById('list1');
+list1.style.color = 'black';
+
+var list2 = document.getElementById('list2');
+list2.style.color = 'black';
+
+var list3 = document.getElementById('list3');
+list3.style.color = 'black';
+
+var list4 = document.getElementById('list4');
+list4.style.color = 'black';
+
+var list5 = document.getElementById('list5');
+list5.style.color = 'black';
 
 // // //------------------------
 // // draw borders around all images that showed up
